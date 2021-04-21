@@ -1,4 +1,5 @@
 const contact= require("../models/contact");
+
 var nodemailer = require('nodemailer');
 
 
@@ -15,6 +16,8 @@ module.exports = {
         })
         .catch((err) => res.json(err).status(500).end());
     },
+
+
     create: function (req, res) {
       const {Prenom, Nom,Email,Telephone, Message} = req.body;
       contact
@@ -28,8 +31,6 @@ module.exports = {
 
 
 
-
-
       var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -40,9 +41,9 @@ module.exports = {
 
       var mailOptions = {
         from: 'khaliid.saaf@gmail.com',
-        to: 'dounia.lasfar1@gmail.com',
+        to: 'khaliid.saaf@gmail.com',
         subject: 'Test Email',
-        text: 'bonjour Dounia ca va'
+        text: 'bonjour khalid saaf'
       };
 
       transporter.sendMail(mailOptions, function(error, info){

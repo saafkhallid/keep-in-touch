@@ -23,12 +23,14 @@ const contactSchema = new mongoose.Schema({
     },
 
     Telephone: {
+        
         type: Number,
         require: true,
 
     },
 
     Message:{
+
         type:String,
         require: true,
         maxLength:200

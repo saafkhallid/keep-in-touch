@@ -1,17 +1,21 @@
 
-require('dotenv').config()
+      require('dotenv').config()
 
-const connectDB=require("./config/db")
+      const connectDB=require("./config/db")
 
-const express = require('express')
-const bodyParser= require('body-parser')
-const contactRoute=require('./routes/contactroute')
+      const express = require('express')
+
+      const bodyParser= require('body-parser')
+
+      const contactRoute=require('./routes/contactroute')
+
 
 
 connectDB();
 
 const app = express()
 // parse application/x-www-form-urlencoded
+
 app.use(bodyParser.urlencoded({ extended: true }))
  
 // parse application/json
