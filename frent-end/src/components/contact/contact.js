@@ -27,7 +27,7 @@ class App extends Component {
               <label htmlFor="lastName">Nom</label>
               <input
                 className=""
-                placeholder="Last Name"
+                placeholder="Nom"
                 type="text"
                 name="lastName"
                 noValidate
@@ -60,7 +60,15 @@ class App extends Component {
             </div>
             <div className="Message">
               <label htmlFor="message">Message</label>
-              <textarea rows="4" cols="50" name="comment" form="usrform"> </textarea>
+              <textarea
+               rows="4" 
+               cols="50" 
+               name="comment" 
+               form="usrform"
+               placeholder="Ecrire Message"
+
+               > 
+               </textarea>
              
             </div>
             

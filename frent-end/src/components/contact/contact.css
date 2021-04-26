@@ -17,7 +17,7 @@
   padding: 20px 40px;
   border-radius: 10px;
   box-shadow: 0px 10px 50px #555;
-  background-color: #ffffff;
+  background-color: #fafafa;
 }
 
 form {
@@ -38,7 +38,7 @@ h1 {
 label {
   font-size: 0.8em;
   margin-bottom: 0.25em;
-  color: rgb(89, 105, 96);
+  color: rgb(11, 12, 11);
   font-weight: lighter;
 }
 
@@ -49,10 +49,10 @@ input,textarea {
   border: 1px solid #cfcfcf;
 }
 
-input::placeholder {
-  font-size: 1.2em;
+input::placeholder,textarea::placeholder {
+  font-size: 1em;
   font-weight: lighter;
-  color: #999;
+  color: rgb(15, 13, 13);
 }
 
 input.error {
@@ -84,7 +84,7 @@ input.error {
 
 .firstName,
 .lastName {
-  width: 49%;
+  width: 100%;
 }
 
 .email,
@@ -117,9 +117,12 @@ input.error {
   color: #519e8a;
   background-color: rgb(211, 223, 55);
   border: 2px solid #ddc438;
+
 }
 
 .createAccount small {
   color: #999;
   font-weight: lighter;
+  cursor: pointer;
+
 }
