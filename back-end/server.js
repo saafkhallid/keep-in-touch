@@ -1,6 +1,8 @@
 
       require('dotenv').config()
 
+      const cors = require('cors')
+
       const connectDB=require("./config/db")
 
       const express = require('express')
@@ -15,7 +17,7 @@ connectDB();
 
 const app = express()
 // parse application/x-www-form-urlencoded
-
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
  
 // parse application/json

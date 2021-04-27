@@ -1,4 +1,8 @@
 const mongoose = require('mongoose');
+const d = new Date();
+let month = d.getMonth() + 1;
+if (month < 10) month = `0${month}`;
+const dt = `${d.getFullYear()}-${month}-${d.getDate()}`;
 
 const contactSchema = new mongoose.Schema({
   
@@ -19,12 +23,15 @@ const contactSchema = new mongoose.Schema({
     Email: {
         type: String,
         require: true,
+        unique: true,
         maxLength: 150
+        
     },
 
     Telephone: {
         
         type: Number,
+        unique: true,
         require: true,
 
     },
@@ -34,7 +41,11 @@ const contactSchema = new mongoose.Schema({
         type:String,
         require: true,
         maxLength:200
-    }
+    },
+    date: {
+        type: String,
+        default: dt,
+      }
    
 }, {timestamps: true});
 
