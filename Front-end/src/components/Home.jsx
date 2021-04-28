@@ -1,6 +1,5 @@
 import React,{useEffect,useState} from 'react';
-
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'
 import axios from 'axios';
 
 
@@ -9,14 +8,12 @@ const Home =() =>{
     email:'',
     date:'',
   }
-
   const [contact,setContact]= useState([])
   const [formData,setData] = useState(initialData)
-
+  // const [date,setDate] = useState('')
   const getContact =async ()=>{
-    const {data} = await axios.get('http://localhost:4000/api/contact/create');
+    const {data} = await axios.get('http://localhost:4000/api/contact');
     if(data) setContact(data)
-    console.log(data)
   }
   useEffect(()=>{
     getContact()
@@ -66,7 +63,7 @@ const Home =() =>{
          <button
           onClick={handleClick}
           type="submit"
-          className="btn btn-primary mb-4"
+          className="btn btn-primary mb-3"
         >
           Search
         </button>
@@ -89,11 +86,11 @@ const Home =() =>{
             contact.map((element,index)=>(
               <tr>
                 <th scope="row">{index+1}</th>
-                <td>{element.Nom}</td>
-                <td>{element.Prenom}</td>
-                <td>{element.Email}</td>
-                <td>{element.Telephone}</td>
-                <td>{element.Message}</td>
+                <td>{element.nom}</td>
+                <td>{element.prenom}</td>
+                <td>{element.email}</td>
+                <td>{element.phone}</td>
+                <td>{element.message}</td>
                 <td>{element.date}</td>
                 <td>
                   <Link to={`/Reply/${element._id}`}>

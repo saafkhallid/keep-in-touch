@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 function Reply(props) {
   const {id} = useParams()
-  const [Message,setMessage] = useState('')
+  const [message,setMessage] = useState('')
   const handleClick =async (e)=>{
     e.preventDefault();
     try {
-        const res = await axios.post(`http://localhost:4000/api/contact/reply/${id}`,{Message});
+        const res = await axios.post(`http://localhost:4000/api/contact/reply/${id}`,{message});
         if(res) props.history.push('/')
       } catch (error) {
         if(error) console.log(error.response);
@@ -21,7 +21,7 @@ function Reply(props) {
 
   const getContact =async ()=>{
    try {
-      const {data} = await axios.get(`http://localhost:4000/api/contact/singlecontact/${id}`);
+      const {data} = await axios.post(`http://localhost:4000/api/contact/singlecontact/${id}`);
     if(data) setContact(data)
    } catch (error) {
      if(error) console.log(error.response);
@@ -37,13 +37,13 @@ function Reply(props) {
          <>
               <h1> Repondre </h1>
           <p>
-            <span>A : {contact.Nom} {contact.Prenom}</span> 
+            <span>A : {contact.nom} {contact.prenom}</span> 
           </p>
           <p>
-            <span>Email :  {contact.Email}</span> 
+            <span>Email :  {contact.email}</span> 
           </p>
           <p>
-            <span>Message :{contact.Message} </span> 
+            <span>Message :{contact.message} </span> 
           </p>
          </>
        )
